@@ -1,4 +1,4 @@
-# TTX Subway Delay Data
+# TTC Subway Delay Data
 
 ## Introduction 
 TTC Subway Delay Data - [https://open.toronto.ca/dataset/ttc-subway-delay-data/](https://open.toronto.ca/dataset/ttc-subway-delay-data/)
