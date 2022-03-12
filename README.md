@@ -1,6 +1,6 @@
 # TTC Subway Delay Data
 
-![Dashboard](/delay-analysis/path/to/img.jpg "Optional title")
+![Dashboard](/delay-analysis/TTC-Dashboard.png)
 
 
 ## Introduction 
