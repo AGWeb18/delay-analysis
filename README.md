@@ -70,3 +70,7 @@ for row in df.iterrows():
         df2.to_sql("fctDelayFacts", con=eng, if_exists="append")  #  Write to DB
 ```
 
+## Database Design
+
+This ETL process follows the convention of a STAR schema where we have our fact table and a dimensional table to join on. This allows for future development as the addition of new dimensional tables will bring more possible insights. 
+
