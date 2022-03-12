@@ -1,5 +1,8 @@
 # TTC Subway Delay Data
 
+![Dashboard](/delay-analysis/path/to/img.jpg "Optional title")
+
+
 ## Introduction 
 TTC Subway Delay Data - [https://open.toronto.ca/dataset/ttc-subway-delay-data/](https://open.toronto.ca/dataset/ttc-subway-delay-data/)
 
