@@ -28,21 +28,20 @@ for item in package["result"]["resources"]:
 df = pd.DataFrame(l_of_urls, columns=["name", "url"])
 df = df.iloc[1:, :]
 
-df.to_clipboard()
-#  pymysql_str = "mysql+pymysql://{}:{}@127.0.0.1/delayAnalysis".format(os_name, os_pss)
-# eng = create_engine(pymysql_str)
+pymysql_str = "mysql+pymysql://{}:{}@127.0.0.1/delayAnalysis".format(os_name, os_pss)
+eng = create_engine(pymysql_str)
 
-# # Read the URLS into a DataFrame
-# # Write the DataFrame directly to MySQL
-# for row in df.iterrows():
-#     url = row[1]["url"]  #   Store the URL for later use.
-#     file_name = row[1]["name"]
-#     if file_name.find("readme") > 0:  #  Check if the word "readme" is found
-#         continue
-#     else:
-#         r = requests.get(url)  # If not found, download the XLSX
-#         open("temp.xls", "wb").write(r.content)
-#         df2 = pd.read_excel("temp.xls")  #   Read into DataFrame.
-#         df2["datasetName"] = file_name  #    Add a column
-#         print("writing {} to db".format(file_name))
-#         df2.to_sql("fctDelayFacts", con=eng, if_exists="append")  #  Write to DB
+# Read the URLS into a DataFrame
+# Write the DataFrame directly to MySQL
+for row in df.iterrows():
+    url = row[1]["url"]  #   Store the URL for later use.
+    file_name = row[1]["name"]
+    if file_name.find("readme") > 0:  #  Check if the word "readme" is found
+        continue
+    else:
+        r = requests.get(url)  # If not found, download the XLSX
+        open("temp.xls", "wb").write(r.content)
+        df2 = pd.read_excel("temp.xls")  #   Read into DataFrame.
+        df2["datasetName"] = file_name  #    Add a column
+        print("writing {} to db".format(file_name))
+        df2.to_sql("fctDelayFacts", con=eng, if_exists="append")  #  Write to DB
